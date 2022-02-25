@@ -9,7 +9,7 @@ const Projects = () => {
 				"bg-blue-300",
 			].join(" ")}
 		>
-			Projects
+			Projects | Work in Progress
 			<ul>
 				<li>WorkLogger</li>
 				<li>BillsTracker</li>

@@ -22,7 +22,7 @@ const LandingSection = () => {
 				</div>
 				<div className={["flex flex-col items- justify-center space-y-4"].join(" ")}>
 					<span className={["text-4xl font-extrabold text-gray-800 tracking-wider text-left"].join(" ")}>
-						Hi, I'm Erwin!
+						Hi, I&apos;m Erwin!
 					</span>
 					<span className={["text-2xl font-bold text-gray-800 tracking-wider text-left"].join(" ")}>
 						A frontend enthusiast, hobby web and IoT developer, Master's student, and lecturer.

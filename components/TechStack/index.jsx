@@ -9,7 +9,7 @@ const TechStack = () => {
 				"bg-orange-300",
 			].join(" ")}
 		>
-			TechStack
+			TechStack | Work in Progress
 			<ul>
 				<li>Javascript</li>
 				<li>React</li>
