@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "next/image"
 
-import profile from "../../public/profile.jpg"
+import profile from "../../public/Profile.jpg"
 import Link from "next/link"
 
 import { FaGithub, FaLinkedin } from "react-icons/fa"

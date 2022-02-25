@@ -1,6 +1,13 @@
 import React from "react"
 import Link from "next/link"
 
+const links = [
+	{ name: "About", linkStr: "#about" },
+	{ name: "Projects", linkStr: "#projects" },
+	{ name: "TechStack", linkStr: "#stack" },
+	{ name: "Blog", linkStr: "#blog" },
+]
+
 const Header = () => {
 	return (
 		<header
@@ -13,22 +20,15 @@ const Header = () => {
 		>
 			<div>
 				<Link href="/">
-					<a>Home</a>
+					<a className={["font-bold tracking-widest text-gray-900"].join(" ")}>eruwinu-dev</a>
 				</Link>
 			</div>
 			<div className={["flex flex-row items-center justify-center space-x-4"].join(" ")}>
-				<Link href="/">
-					<a>About</a>
-				</Link>
-				<Link href="/">
-					<a>Projects</a>
-				</Link>
-				<Link href="/">
-					<a>Blog</a>
-				</Link>
-				<Link href="/">
-					<a>Contact</a>
-				</Link>
+				{links.map((linkItem, index) => (
+					<Link key={index} href={linkItem.linkStr}>
+						<a>{linkItem.name}</a>
+					</Link>
+				))}
 			</div>
 		</header>
 	)
