@@ -25,7 +25,7 @@ const LandingSection = () => {
 						Hi, I&apos;m Erwin!
 					</span>
 					<span className={["text-2xl font-bold text-gray-800 tracking-wider text-left"].join(" ")}>
-						A frontend enthusiast, hobby web and IoT developer, Master's student, and lecturer.
+						A frontend enthusiast, hobby web and IoT developer, Master&apos;s student, and lecturer.
 					</span>
 				</div>
 			</div>
@@ -51,10 +51,10 @@ const LandingSection = () => {
 					about learning new things and implementing them in real-life projects.
 				</span>
 				<span className={["text-xl font-bold text-gray-800 tracking-wider text-justify"].join(" ")}>
-					I'm also doing a project that involves digitally filtering sound waveforms using ESP32 boards.
+					I&apos;m also doing a project that involves digitally filtering sound waveforms using ESP32 boards.
 				</span>
 				<span className={["text-xl font-bold text-gray-800 tracking-wider text-justify"].join(" ")}>
-					I'm currently enrolled as an MS in Electrical Engineering student at University of the Philippines
+					I&apos;m currently enrolled as an MS Electrical Engineering student at University of the Philippines
 					Diliman.
 				</span>
 			</div>
