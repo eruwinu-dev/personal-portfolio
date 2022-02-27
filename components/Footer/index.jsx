@@ -7,7 +7,7 @@ const Footer = () => {
 				"box-border",
 				"py-2",
 				"flex flex-grow flex-col items-center justify-center",
-				"bg-teal-300",
+				"bg-teal-500",
 			].join(" ")}
 		>
 			<span className={["text-base font-semibold text-gray-900"].join(" ")}>

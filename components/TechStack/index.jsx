@@ -59,15 +59,19 @@ const TechStack = () => {
 	return (
 		<div
 			className={[
-				"box-border min-h-screen max-h-screen h-max",
+				"lg:box-border min-h-screen lg:max-h-screen lg:h-max",
 				"flex flex-col items-center justify-center",
-				"bg-orange-300",
+				"bg-gradient-to-b from-blue-500 to-teal-500",
 				"space-y-8",
 			].join(" ")}
 		>
-			<span className={["text-4xl font-bold tracking-wider text-gray-900"].join(" ")}>My Tech Stack</span>
+			<span className={["text-4xl font-bold tracking-wider text-gray-900", "mt-8 lg:mt-0 mb-8"].join(" ")}>
+				My Tech Stack
+			</span>
 			<motion.div
-				className={["w-1/2 grid grid-flow-row grid-rows-3 grid-cols-3 gap-8"].join(" ")}
+				className={[
+					"w-1/2 grid grid-flow-row lg:grid-rows-3 grid-rows-4 lg:grid-cols-3 grid-cols-2 gap-8",
+				].join(" ")}
 				variants={TechStackContainer}
 				initial="hidden"
 				whileInView="show"
