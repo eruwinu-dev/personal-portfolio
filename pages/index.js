@@ -2,7 +2,6 @@ import React from "react"
 
 import Head from "next/head"
 
-import Header from "../components/Header"
 import LandingSection from "../components/LandingSection"
 import Projects from "../components/Projects"
 import TechStack from "../components/TechStack"
@@ -20,7 +19,6 @@ const Home = () => {
 			<Head>
 				<title>Home | eruwinu-dev</title>
 			</Head>
-			<Header />
 			<LandingSection />
 			<Projects />
 			<TechStack />

@@ -1,3 +1,33 @@
+/* if vs code shows warning , go to setting -> CSS> Lint:Unknown At Rules -> select ignore */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	body {
+	}
+	nav {
+		@apply absolute top-0 left-0 bottom-0 w-[300px];
+	}
+	ul {
+		@apply p-5 absolute top-[100px] w-[260px];
+	}
+	li {
+		@apply flex items-center mb-5 space-x-6 cursor-pointer;
+	}
+}
+
+@layer components {
+	.background {
+		@apply bg-gray-200 absolute top-0 left-0 bottom-0 w-[300px];
+	}
+	.icon-placeholder {
+		@apply w-[45px] h-[45px] rounded-full;
+	}
+	.text-placeholder {
+		@apply flex-1 h-8 rounded-lg;
+	}
+}
+
+/* menu items */

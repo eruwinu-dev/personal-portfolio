@@ -1,6 +1,8 @@
 import React from "react"
 import Image from "next/image"
 
+import { motion } from "framer-motion"
+
 const technologies = [
 	{
 		name: "JavaScript",
@@ -36,6 +38,23 @@ const technologies = [
 	},
 ]
 
+const TechStackContainer = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.3,
+			type: "spring",
+			duration: 0.5,
+		},
+	},
+}
+
+const TechItem = {
+	hidden: { opacity: 0 },
+	show: { opacity: 1 },
+}
+
 const TechStack = () => {
 	return (
 		<div
@@ -47,14 +66,24 @@ const TechStack = () => {
 			].join(" ")}
 		>
 			<span className={["text-4xl font-bold tracking-wider text-gray-900"].join(" ")}>My Tech Stack</span>
-			<div className={["w-1/2 grid grid-flow-row grid-rows-3 grid-cols-3 gap-8"].join(" ")}>
+			<motion.div
+				className={["w-1/2 grid grid-flow-row grid-rows-3 grid-cols-3 gap-8"].join(" ")}
+				variants={TechStackContainer}
+				initial="hidden"
+				whileInView="show"
+				viewport={{ once: true, amount: 0.8 }}
+			>
 				{technologies.map((tech, index) => (
-					<div key={index} className={["flex flex-col items-center justify-center", "space-y-4"].join(" ")}>
+					<motion.div
+						variants={TechItem}
+						key={index}
+						className={["flex flex-col items-center justify-center", "space-y-4"].join(" ")}
+					>
 						<Image alt={tech.name} src={tech.image} layout="fixed" width={72} height={72} />
 						<span className={["text-lg font-semibold text-gray-900"].join(" ")}>{tech.name}</span>
-					</div>
+					</motion.div>
 				))}
-			</div>
+			</motion.div>
 		</div>
 	)
 }
