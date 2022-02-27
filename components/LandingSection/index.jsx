@@ -32,13 +32,15 @@ const LandingSection = () => {
 				"lg:box-border min-h-screen lg:max-h-screen lg:h-max",
 				"flex flex-grow flex-col items-center justify-center",
 				"bg-gradient-to-b from-cyan-500 to-sky-500",
+				"border-0",
 			].join(" ")}
 		>
 			<motion.div
 				className={[
 					"box-border min-h-screen h-max lg:w-1/2 w-11/12",
 					"flex flex-grow flex-col items-center justify-center",
-					"space-y-8",
+					"lg:space-y-8 sm:space-y-8 space-y-4",
+					"lg:p-0 p-4",
 					"bg-gradient-to-b from-cyan-500 to-sky-500",
 				].join(" ")}
 				initial="hidden"
@@ -48,24 +50,34 @@ const LandingSection = () => {
 				<motion.div
 					className={[
 						"w-full",
-						"flex lg:flex-row flex-col items-center justify-start lg:space-x-8 space-x-0",
+						"flex lg:flex-row flex-col items-center justify-start lg:space-x-8 space-x-0 space-y-8",
 					].join(" ")}
 					variants={LandingSectionItem}
 				>
-					<div className={["lg:w-48 w-0"].join(" ")}>
-						<Image alt="profile" src={profile} layout="responsive" className={["rounded-3xl"].join(" ")} />
-					</div>
-					<div className={["flex flex-col items- justify-center space-y-4"].join(" ")}>
+					<motion.div
+						className={["lg:w-48 w-24 rounded-3xl", "border-2 border-white"].join(" ")}
+						whileHover={{ rotate: 360 }}
+						transition={{ duration: 1 }}
+					>
+						<Image
+							alt="profile"
+							src={profile}
+							layout="responsive"
+							className={["rounded-3xl"].join(" ")}
+							priority="high"
+						/>
+					</motion.div>
+					<div className={["flex flex-col items-center justify-center space-y-4"].join(" ")}>
 						<span
 							className={[
-								"text-4xl lg:text-left text-center font-extrabold text-gray-800 tracking-wider text-left",
+								"lg:text-4xl sm:text-3xl text-2xl lg:text-left text-center font-extrabold text-gray-800 tracking-wider text-left",
 							].join(" ")}
 						>
 							Hi, I&apos;m Erwin!
 						</span>
 						<span
 							className={[
-								"text-2xl lg:text-left text-center font-bold text-gray-800 tracking-wider text-left",
+								"lg:text-2xl text-lg lg:text-left text-center font-bold text-gray-800 lg:tracking-wider text-left",
 							].join(" ")}
 						>
 							A frontend enthusiast, hobby web and IoT developer, Master&apos;s student, and lecturer.
@@ -77,7 +89,11 @@ const LandingSection = () => {
 					className={["w-full", "flex flex-col items-start justify-start space-y-8"].join(" ")}
 					variants={LandingSectionItem}
 				>
-					<span className={["text-xl font-bold text-gray-800 tracking-wider text-justify"].join(" ")}>
+					<span
+						className={["lg:text-xl text-base font-bold text-gray-800 lg:tracking-wider text-justify"].join(
+							" "
+						)}
+					>
 						I like to teach myself different frontend technologies, especially React and NextJS. I am
 						passionate about learning new things and implementing them in real-life projects.
 					</span>
@@ -86,7 +102,11 @@ const LandingSection = () => {
 					className={["w-full", "flex flex-col items-start justify-start space-y-8"].join(" ")}
 					variants={LandingSectionItem}
 				>
-					<span className={["text-xl font-bold text-gray-800 tracking-wider text-justify"].join(" ")}>
+					<span
+						className={["lg:text-xl text-base font-bold text-gray-800 lg:tracking-wider text-justify"].join(
+							" "
+						)}
+					>
 						I&apos;m also doing a project that involves digitally filtering sound waveforms using ESP32
 						boards.
 					</span>
@@ -95,7 +115,11 @@ const LandingSection = () => {
 					className={["w-full", "flex flex-col items-start justify-start space-y-8"].join(" ")}
 					variants={LandingSectionItem}
 				>
-					<span className={["text-xl font-bold text-gray-800 tracking-wider text-justify"].join(" ")}>
+					<span
+						className={["lg:text-xl text-base font-bold text-gray-800 lg:tracking-wider text-justify"].join(
+							" "
+						)}
+					>
 						I&apos;m currently enrolled as an MS Electrical Engineering student at University of the
 						Philippines Diliman.
 					</span>

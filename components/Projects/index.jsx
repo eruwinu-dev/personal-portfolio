@@ -49,74 +49,82 @@ const Projects = () => {
 				"lg:box-border min-h-screen lg:max-h-screen lg:h-max",
 				"flex flex-col items-center justify-center",
 				"bg-gradient-to-b from-sky-500 to-blue-500",
+				"lg:p-0 p-4",
+				"border-0",
 			].join(" ")}
 		>
-			<div className={["flex flex-col items-center justify-center", , "space-y-4", "lg:w-1/2 w-full"].join(" ")}>
-				<span className={["text-4xl font-bold tracking-wider text-gray-900 mb-4"].join(" ")}>Projects</span>
+			<div className={["flex flex-col items-center justify-center", "space-y-4", "lg:w-1/2 w-full"].join(" ")}>
+				<span
+					className={[
+						"lg:text-4xl sm:text-3xl text-2xl font-bold tracking-wider text-gray-900 text-center",
+					].join(" ")}
+				>
+					Projects
+				</span>
+				<span className={["lg:text-xl text-md font-semibold text-gray-900"].join(" ")}>
+					Here are some of my hobby projects.
+				</span>
 				<div
 					className={[
-						"grid grid-flow-row lg:grid-rows-2 grid-rows-3 lg:grid-cols-2 grid-cols-1 lg:gap-x-16 gap-x-4 lg:gap-y-4 lg:gap-y-16",
+						"grid grid-flow-row lg:grid-rows-2 grid-rows-3 lg:grid-cols-2 grid-cols-1 lg:gap-x-16 gap-x-4 gap-y-4",
 					].join(" ")}
 				>
 					{projectsList.map((project, index) => (
-						<motion.div
-							className="w-full"
-							initial="offscreen"
-							whileInView="onscreen"
-							key={index}
-							viewport={{ once: true, amount: 0.8 }}
-						>
-							<div className="w-full">
-								<motion.div className="w-full" variants={cardVariants}>
-									<a
-										href={project.site}
-										target="_blank"
-										rel="noopener noreferrer"
-										key={index}
-										className={[
-											"flex flex-col items-center justify-start",
-											"space-y-4",
-											"p-4",
-											"rounded-lg",
-											"bg-transparent",
-											"opacity-90 hover:opacity-100",
-											"shadow-none hover:shadow-lg",
-											"hover:-translate-y-2",
-											"transition delay-150 duration-300 ease-in-out",
-										].join(" ")}
-									>
-										<div className={["w-full"].join(" ")}>
-											<Image
-												alt={project.name}
-												src={project.image}
-												layout="responsive"
-												className={["rounded-lg"].join(" ")}
-											/>
-										</div>
-
-										<div
-											className={[
-												"w-full flex flex-col items-center justify-center",
-												"space-y-4",
-											].join(" ")}
-										>
-											<span
-												className={[
-													"w-full text-center text-2xl font-bold tracking-wider",
-												].join(" ")}
-											>
-												{project.name}
-											</span>
-											<p className={["text-justified font-semibold"].join(" ")}>{project.desc}</p>
-										</div>
-									</a>
-								</motion.div>
-							</div>
-						</motion.div>
+						<ProjectTile project={project} key={index} />
 					))}
 				</div>
 			</div>
 		</div>
+	)
+}
+
+const ProjectTile = ({ project }) => {
+	return (
+		<motion.div className="w-full" initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 1 }}>
+			<motion.div className={["w-full", "p-4"].join(" ")} variants={cardVariants}>
+				<a
+					href={project.site}
+					target="_blank"
+					rel="noopener noreferrer"
+					className={[
+						"flex flex-col items-center justify-start",
+						"rounded-lg",
+						"bg-transparent",
+						"lg:opacity-90 opacity-100 hover:opacity-100",
+						"shadow-none hover:shadow-lg",
+						"hover:-translate-y-2",
+						"transition delay-150 duration-300 ease-in-out",
+						"bg-white",
+					].join(" ")}
+				>
+					<div className={["w-full", "border-b-2 border-blue-500"].join(" ")}>
+						<Image
+							alt={project.name}
+							src={project.image}
+							layout="responsive"
+							className={["rounded-t-lg"].join(" ")}
+						/>
+					</div>
+
+					<div
+						className={[
+							"w-full flex flex-col items-center justify-center",
+							"p-4",
+							"space-y-4 rounded-b-lg",
+						].join(" ")}
+					>
+						<span
+							className={["w-full text-center text-2xl font-bold tracking-wider text-gray-900"].join(" ")}
+						>
+							{project.name}
+						</span>
+						<p className={["text-justified font-semibold text-center text-gray-900"].join(" ")}>
+							{project.desc}
+						</p>
+					</div>
+				</a>
+			</motion.div>
+		</motion.div>
 	)
 }
 

@@ -36,6 +36,10 @@ const technologies = [
 		name: "React Native",
 		image: "/ReactNative.svg",
 	},
+	{
+		name: "Git",
+		image: "/Git.svg",
+	},
 ]
 
 const TechStackContainer = {
@@ -62,15 +66,22 @@ const TechStack = () => {
 				"lg:box-border min-h-screen lg:max-h-screen lg:h-max",
 				"flex flex-col items-center justify-center",
 				"bg-gradient-to-b from-blue-500 to-teal-500",
-				"space-y-8",
+				"space-y-4",
+				"lg:p-0 p-4",
+				"border-0",
 			].join(" ")}
 		>
-			<span className={["text-4xl font-bold tracking-wider text-gray-900", "mt-8 lg:mt-0 mb-8"].join(" ")}>
+			<span className={["lg:text-4xl sm:text-3xl text-2xl font-bold tracking-wider text-gray-900"].join(" ")}>
 				My Tech Stack
+			</span>
+			<span className={["lg:text-xl text-md font-semibold text-gray-900 text-center"].join(" ")}>
+				Here are the technologies that I am currently using.
 			</span>
 			<motion.div
 				className={[
-					"w-1/2 grid grid-flow-row lg:grid-rows-3 grid-rows-4 lg:grid-cols-3 grid-cols-2 gap-8",
+					"lg:w-1/2",
+					"pt-4",
+					"grid grid-flow-row lg:grid-rows-3 grid-rows-5 lg:grid-cols-3 grid-cols-2 lg:gap-4 gap-8",
 				].join(" ")}
 				variants={TechStackContainer}
 				initial="hidden"
@@ -83,7 +94,7 @@ const TechStack = () => {
 						key={index}
 						className={["flex flex-col items-center justify-center", "space-y-4"].join(" ")}
 					>
-						<Image alt={tech.name} src={tech.image} layout="fixed" width={72} height={72} />
+						<Image alt={tech.name} src={tech.image} layout="fixed" width={72} height={72} priority />
 						<span className={["text-lg font-semibold text-gray-900"].join(" ")}>{tech.name}</span>
 					</motion.div>
 				))}
