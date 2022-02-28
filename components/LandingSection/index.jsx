@@ -56,8 +56,9 @@ const LandingSection = () => {
 				>
 					<motion.div
 						className={["lg:w-48 w-24 rounded-3xl", "border-2 border-white"].join(" ")}
-						whileHover={{ rotate: 360 }}
-						transition={{ duration: 1 }}
+						animate={{ rotate: 360 }}
+						whileHover={{ rotate: -360 }}
+						transition={{ duration: 1.5 }}
 					>
 						<Image
 							alt="profile"

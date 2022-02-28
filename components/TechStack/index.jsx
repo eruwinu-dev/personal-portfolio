@@ -47,9 +47,7 @@ const TechStackContainer = {
 	show: {
 		opacity: 1,
 		transition: {
-			staggerChildren: 0.3,
-			type: "spring",
-			duration: 0.5,
+			staggerChildren: 0.2,
 		},
 	},
 }

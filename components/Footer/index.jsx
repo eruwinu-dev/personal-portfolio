@@ -7,7 +7,7 @@ const Footer = () => {
 				"box-border",
 				"p-4",
 				"flex lg:flex-row flex-col items-center justify-center lg:space-y-0 space-y-2 lg:space-x-2",
-				"bg-teal-500",
+				"bg-emerald-500",
 				"border-0",
 			].join(" ")}
 		>

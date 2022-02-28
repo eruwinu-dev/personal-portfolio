@@ -5,6 +5,7 @@ import Head from "next/head"
 import LandingSection from "../components/LandingSection"
 import Projects from "../components/Projects"
 import TechStack from "../components/TechStack"
+import Contact from "../components/Contact"
 import Footer from "../components/Footer"
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
 			<LandingSection />
 			<Projects />
 			<TechStack />
+			<Contact />
 			<Footer />
 		</div>
 	)
